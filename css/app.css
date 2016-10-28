@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    font-family: Shadows, sans-serif;
+}
+img {
+    max-width: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Shadows';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Shadows Into Light Regular'),
+    local('Shadows-Into-Light-Regular'),
+    url('../fonts/Shadows/ShadowsIntoLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/material-icons/MaterialIcons-Regular.eot');
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('../fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('../fonts/material-icons/MaterialIcons-Regular.woff') format('woff'),
+    url('../fonts/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+}
+.material-icons {
+    font-family: 'Material Icons', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#37474F), to(#2F2727));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.game-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scorecard {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scorecard .score-name {
+    margin: 0;
+    padding: 0;
+}
+.scorecard .score-name li {
+    display: inline-block;
+    color: #FFF;
+    font-size: 20pt;
+    padding: 15px 20px ;
+}
+.scorecard .score-name li span {
+    color: #FF1744;
+    font-size: 35pt;
+}
+
+.game-field  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-collapse: collapse;
+}
+.game-field tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+.game-field tr:nth-child(2) {
+    border-top: 5px solid #29B6F6;
+    border-bottom: 5px solid #29B6F6;
+}
+.game-field tr td:nth-child(2) {
+    border-left: 5px solid #29B6F6;
+    border-right: 5px solid #29B6F6;
+}
+.game-field tr td {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+}
+.game-field tr td svg{
+    max-height: 100%;
+}
+.game-field tr td svg.circle circle{
+    stroke-dasharray: 125.66370614359172;
+    animation: circleAnimate 0.225s ease-in-out forwards;
+}
+.game-field tr td svg
+.game-field tr td svg.cross {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+.game-field tr td svg.cross .line1 {
+    stroke-dasharray: 56.56854248046875;
+    animation: crossAnimate 0.100s ease-in-out forwards;
+}
+.game-field tr td svg.cross .line2 {
+    stroke-dasharray: 56.56854248046875;
+    animation: crossAnimate 0.225s ease-in-out forwards;
+}
+@keyframes crossAnimate {
+    from {
+        stroke-dashoffset: 56.56854248046875;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes circleAnimate  {
+    from {
+        stroke-dashoffset: 125.66370614359172;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+    
+}
