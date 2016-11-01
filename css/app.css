@@ -80,33 +80,91 @@ a {
     align-items: center;
     justify-content: center;
 }
-.scorecard {
-    width: 100%;
-    height: 70px;
+.start-game {
+    width: 40%;
+    height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    left: 30%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.start-game .logo {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
+    color: #ffffff;
+}
+.start-game .logo h1 { color: #FFFFFF; }
+.start-game .field {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+.start-game .field input {
+    height: 30px;
+    width: 70%;
+    font-size: 12pt;
+}
+.start-game .action {
+    position: absolute;
+    bottom: 28%;
+    height: 80px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.scorecard .score-name {
-    margin: 0;
-    padding: 0;
-}
-.scorecard .score-name li {
-    display: inline-block;
-    color: #FFF;
-    font-size: 20pt;
-    padding: 15px 20px ;
-}
-.scorecard .score-name li span {
-    color: #FF1744;
-    font-size: 35pt;
+.start-game .action .btn {
+    width: 70%;
+    height: 35px;
+    border: 0;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #29B6F6;
+    border-radius: 2px;
 }
 
-.game-field  {
+.main-game {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-game .scoreboard {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-game .scoreboard .result {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    color: #ffffff;
+}
+.main-game .game-field  {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -114,19 +172,19 @@ a {
     position: absolute;
     border-collapse: collapse;
 }
-.game-field tbody {
+.main-game .game-field tbody {
     display: table-row-group;
     vertical-align: middle;
 }
-.game-field tr:nth-child(2) {
+.main-game .game-field tr:nth-child(2) {
     border-top: 5px solid #29B6F6;
     border-bottom: 5px solid #29B6F6;
 }
-.game-field tr td:nth-child(2) {
+.main-game .game-field tr td:nth-child(2) {
     border-left: 5px solid #29B6F6;
     border-right: 5px solid #29B6F6;
 }
-.game-field tr td {
+.main-game .game-field tr td {
     width: 110px;
     height: 110px;
     position: relative;
@@ -135,25 +193,28 @@ a {
     margin: 0;
     padding: 10px;
 }
-.game-field tr td svg{
+.main-game .game-field tr td svg{
     max-height: 100%;
 }
-.game-field tr td svg.circle circle{
+.main-game .game-field tr td svg.circle circle{
     stroke-dasharray: 125.66370614359172;
     animation: circleAnimate 0.225s ease-in-out forwards;
 }
-.game-field tr td svg
-.game-field tr td svg.cross {
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
+.main-game .game-field tr td svg.circle {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
 }
-.game-field tr td svg.cross .line1 {
-    stroke-dasharray: 56.56854248046875;
-    animation: crossAnimate 0.100s ease-in-out forwards;
+.main-game .game-field tr td svg.cross {
+    -webkit-transform: rotate(360deg) scaleY(-1);
+    transform: rotate(360deg) scaleY(-1);
 }
-.game-field tr td svg.cross .line2 {
+.main-game .game-field tr td svg.cross .line1 {
     stroke-dasharray: 56.56854248046875;
     animation: crossAnimate 0.225s ease-in-out forwards;
+}
+.main-game .game-field tr td svg.cross .line2 {
+    stroke-dasharray: 56.56854248046875;
+    animation: crossAnimate 0.100s ease-in-out forwards;
 }
 @keyframes crossAnimate {
     from {

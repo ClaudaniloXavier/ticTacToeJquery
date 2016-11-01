@@ -10,25 +10,59 @@
 <body>
 
     <div class="background">
+
         <div class="game-container" id="game-container">
 
-            <table class="game-field" id="field">
-                <tr>
-                    <td id="zero" data-index="0"></td>
-                    <td id="one" data-index="1"></td>
-                    <td id="two" data-index="2"></td>
-                </tr>
-                <tr>
-                    <td id="three" data-index="3"></td>
-                    <td id="four" data-index="4"></td>
-                    <td id="five" data-index="5"></td>
-                </tr>
-                <tr>
-                    <td id="six" data-index="6"></td>
-                    <td id="seven" data-index="7"></td>
-                    <td id="eight" data-index="8"></td>
-                </tr>
-            </table>
+            <div class="start-game">
+                <div class="logo">
+                    <h1>Tic.Tac.Toe.</h1>
+                </div>
+                <div class="field">
+                    <label for="player1">Jogador 1</label>
+                    <input id="player1" type="text" title="player1">
+                </div>
+                <div class="field">
+                    <label for="player2">Jogador 2</label>
+                    <input id="player2" type="text" title="player2">
+                </div>
+                <div class="action">
+                    <button class="btn" id="newGame">Jogar!</button>
+                </div>
+            </div>
+
+            <div class="main-game">
+                <div class="scoreboard">
+                    <div class="result">
+                        <h1>Jogador 1</h1>
+                        <div class="line"></div>
+                    </div>
+                    <div>
+                        <h1 style="color: #FFF;">X</h1>
+                    </div>
+                    <div class="result">
+                        <h1>Jogador 2</h1>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <table class="game-field" id="field">
+                    <tr>
+                        <td id="zero" data-index="0"></td>
+                        <td id="one" data-index="1"></td>
+                        <td id="two" data-index="2"></td>
+                    </tr>
+                    <tr>
+                        <td id="three" data-index="3"></td>
+                        <td id="four" data-index="4"></td>
+                        <td id="five" data-index="5"></td>
+                    </tr>
+                    <tr>
+                        <td id="six" data-index="6"></td>
+                        <td id="seven" data-index="7"></td>
+                        <td id="eight" data-index="8"></td>
+                    </tr>
+                </table>
+            </div>
 
         </div>
     </div>
